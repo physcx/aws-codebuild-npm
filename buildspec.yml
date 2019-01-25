@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Building env vars
+      - echo -e "REACT_APP_BUILD_DATE=\"$(date)\"\nREACT_APP_BUILD_COMMIT=\"$(git rev-parse HEAD)\"" > .env
+  build:
+    commands:
+      - npm build
+artifacts:
+  files:
+    - **/*
+  base-directory: build
