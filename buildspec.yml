@@ -7,6 +7,7 @@ phases:
       - echo -e "REACT_APP_BUILD_DATE=\"$(date)\"\nREACT_APP_BUILD_COMMIT=\"$(git rev-parse HEAD)\"" > .env
   build:
     commands:
+      - npm install
       - npm run build
 artifacts:
   files:
